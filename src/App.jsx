@@ -12,8 +12,8 @@ import { BarChart, Bar, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, R
 const META = {
   title: "Fisheries: The Impossibility Frontier",
   subtitle: "§7b Why Global Fisheries Is Type II — And Where It Is Already Transitioning",
-  beta: "4.72",
-  ci: "",
+  beta: "4.77",
+  ci: "3.57–6.30",
   pi: "$47.2B",
   psa: "-$222.8B/yr",
   mu: "0.2119 (21.2%)",
@@ -69,23 +69,24 @@ const HIGHLIGHTS = [
         "Net β_W effect: +0.1 to +0.3 above headline 4.72 from coral tipping. Classification unchanged but irreversible component growing.",
 ];
 
-const PSF_PARAMS = {pi_c:34.3,pi_p:162.0,w_c:405.0,kappa:0.74};
-const PSF_DATA = [{pi:3.43,w:387.49},{pi:11.72,w:395.63},{pi:20.0,w:401.24},{pi:28.29,w:404.34},{pi:36.58,w:404.9},{pi:44.86,w:402.95},{pi:53.15,w:398.47},{pi:61.44,w:391.46},{pi:69.72,w:381.94},{pi:78.01,w:369.89},{pi:86.3,w:355.31},{pi:94.58,w:338.22},{pi:102.87,w:318.59},{pi:111.16,w:296.43},{pi:119.45,w:271.75},{pi:127.73,w:244.57},{pi:136.02,w:214.84},{pi:144.31,w:182.58},{pi:152.59,w:147.84},{pi:160.88,w:110.53},{pi:169.17,w:70.7},{pi:177.45,w:28.39},{pi:185.74,w:-16.49},{pi:194.03,w:-63.9},{pi:202.31,w:-113.77},{pi:210.6,w:-166.23}];
+const PSF_PARAMS = {pi_c:8.5,pi_p:37.6,w_c:177.4,kappa:1.12};
+const PSF_DATA = [{pi:0.85,w:163.67},{pi:2.45,w:168.81},{pi:4.05,w:172.75},{pi:5.65,w:175.49},{pi:7.25,w:177.03},{pi:8.86,w:177.37},{pi:10.46,w:176.5},{pi:12.06,w:174.43},{pi:13.66,w:171.15},{pi:15.26,w:166.68},{pi:16.86,w:161.0},{pi:18.46,w:154.12},{pi:20.06,w:146.05},{pi:21.66,w:136.77},{pi:23.26,w:126.28},{pi:24.87,w:114.52},{pi:26.47,w:101.63},{pi:28.07,w:87.54},{pi:29.67,w:72.25},{pi:31.27,w:55.75},{pi:32.87,w:38.05},{pi:34.47,w:19.16},{pi:36.07,w:-0.94},{pi:37.67,w:-22.25},{pi:39.27,w:-44.75},{pi:40.88,w:-68.6},{pi:42.48,w:-93.51},{pi:44.08,w:-119.63},{pi:45.68,w:-146.94},{pi:47.28,w:-175.46},{pi:48.88,w:-205.18}];
 
-const MC_PARAMS = {n_draws:10000,mean:4.72,ci_lo:3.3,ci_hi:6.9,pct_hw:93.5,channels:[{name:"Overfishing rent dissipation",dist:"log-normal",lo:1.6,hi:3.0},{name:"Bycatch and ecosystem degradation",dist:"triangular",lo:0.8,hi:1.8},{name:"Subsidy-driven overcapacity",dist:"log-normal",lo:0.5,hi:1.2},{name:"IUU fishing governance failure",dist:"uniform",lo:0.2,hi:0.6}]};
-const MC_DATA = [{bin:"1.1",count:4},{bin:"1.5",count:14},{bin:"1.9",count:39},{bin:"2.2",count:93},{bin:"2.6",count:195},{bin:"3.0",count:361},{bin:"3.4",count:590},{bin:"3.8",count:852},{bin:"4.1",count:1089},{bin:"4.5",count:1231},{bin:"4.9",count:1231},{bin:"5.3",count:1089},{bin:"5.7",count:852},{bin:"6.1",count:590},{bin:"6.4",count:361},{bin:"6.8",count:195},{bin:"7.2",count:93},{bin:"7.6",count:39},{bin:"8.0",count:14},{bin:"8.3",count:4}];
+const MC_HIST = [{bin:"3.21",lo:3.2146,hi:3.2893,count:43},{bin:"3.29",lo:3.2893,hi:3.3640,count:65},{bin:"3.36",lo:3.3640,hi:3.4386,count:92},{bin:"3.44",lo:3.4386,hi:3.5133,count:133},{bin:"3.51",lo:3.5133,hi:3.5880,count:162},{bin:"3.59",lo:3.5880,hi:3.6627,count:174},{bin:"3.66",lo:3.6627,hi:3.7373,count:235},{bin:"3.74",lo:3.7373,hi:3.8120,count:283},{bin:"3.81",lo:3.8120,hi:3.8867,count:296},{bin:"3.89",lo:3.8867,hi:3.9614,count:326},{bin:"3.96",lo:3.9614,hi:4.0360,count:360},{bin:"4.04",lo:4.0360,hi:4.1107,count:378},{bin:"4.11",lo:4.1107,hi:4.1854,count:382},{bin:"4.19",lo:4.1854,hi:4.2601,count:329},{bin:"4.26",lo:4.2601,hi:4.3347,count:325},{bin:"4.33",lo:4.3347,hi:4.4094,count:323},{bin:"4.41",lo:4.4094,hi:4.4841,count:332},{bin:"4.48",lo:4.4841,hi:4.5588,count:314},{bin:"4.56",lo:4.5588,hi:4.6334,count:327},{bin:"4.63",lo:4.6334,hi:4.7081,count:270},{bin:"4.71",lo:4.7081,hi:4.7828,count:349},{bin:"4.78",lo:4.7828,hi:4.8575,count:281},{bin:"4.86",lo:4.8575,hi:4.9321,count:252},{bin:"4.93",lo:4.9321,hi:5.0068,count:273},{bin:"5.01",lo:5.0068,hi:5.0815,count:247},{bin:"5.08",lo:5.0815,hi:5.1562,count:240},{bin:"5.16",lo:5.1562,hi:5.2308,count:249},{bin:"5.23",lo:5.2308,hi:5.3055,count:219},{bin:"5.31",lo:5.3055,hi:5.3802,count:218},{bin:"5.38",lo:5.3802,hi:5.4549,count:206},{bin:"5.45",lo:5.4549,hi:5.5295,count:206},{bin:"5.53",lo:5.5295,hi:5.6042,count:194},{bin:"5.60",lo:5.6042,hi:5.6789,count:202},{bin:"5.68",lo:5.6789,hi:5.7536,count:170},{bin:"5.75",lo:5.7536,hi:5.8282,count:169},{bin:"5.83",lo:5.8282,hi:5.9029,count:167},{bin:"5.90",lo:5.9029,hi:5.9776,count:145},{bin:"5.98",lo:5.9776,hi:6.0523,count:125},{bin:"6.05",lo:6.0523,hi:6.1269,count:131},{bin:"6.13",lo:6.1269,hi:6.2016,count:111},{bin:"6.20",lo:6.2016,hi:6.2763,count:102},{bin:"6.28",lo:6.2763,hi:6.3510,count:106},{bin:"6.35",lo:6.3510,hi:6.4256,count:90},{bin:"6.43",lo:6.4256,hi:6.5003,count:59},{bin:"6.50",lo:6.5003,hi:6.5750,count:63},{bin:"6.57",lo:6.5750,hi:6.6497,count:52},{bin:"6.65",lo:6.6497,hi:6.7243,count:46},{bin:"6.72",lo:6.7243,hi:6.7990,count:29},{bin:"6.80",lo:6.7990,hi:6.8737,count:30},{bin:"6.87",lo:6.8737,hi:6.9484,count:20}];
+const MC_STATS = {mean:4.7669,median:4.6515,ci_lo:3.5680,ci_hi:6.3043,pct_hw:100.0,pct_above_3:99.9,pct_above_5:36.7,min:2.8356,max:7.8549,n_draws:10000,seed:42};
+const MC_CHANNELS = [{name:"Stock depletion",mean:79.69,p5:60.40,p50:80.35,p95:97.12,share:0.4514},{name:"Bycatch & discards",mean:15.01,p5:10.21,p50:15.05,p95:19.76,share:0.0850},{name:"Benthic habitat destruction",mean:28.07,p5:17.21,p50:27.81,p95:39.63,share:0.1590},{name:"IUU fishing",mean:16.99,p5:12.24,p50:17.01,p95:21.81,share:0.0962},{name:"Capacity-enhancing subsidies",mean:22.76,p5:19.45,p50:22.63,p95:26.33,share:0.1289},{name:"Governance & forced labor",mean:14.03,p5:6.84,p50:14.04,p95:21.18,share:0.0795}];
+const MC_WELFARE = {mean:176.55,ci_lo:152.24,ci_hi:199.78};
 
-const THRESHOLDS = [{domain:"WTO fisheries subsidies agreement",year:2024,status:"WTO Agreement on Fisheries Subsidies (MC12, 2022) reached but not yet in force; requires 2/3 ratification — only 72 of 110 needed as of mid-2024",confidence:"Medium",crossed:false},{domain:"MSY overshoot global stocks",year:2019,status:"FAO SOFIA 2022: 35.4% of stocks fished at biologically unsustainable levels, up from 10% in 1974; only 64.6% within biologically sustainable levels",confidence:"High",crossed:true},{domain:"Harmful subsidies phase-out",year:2030,status:"Global fisheries subsidies = $35.4B/yr, of which $22.2B are capacity-enhancing harmful subsidies (Sumaila et al. 2019, Marine Policy)",confidence:"Low",crossed:false},{domain:"High seas MPA coverage 30%",year:2030,status:"BBNJ Treaty adopted Jun 2023 but not ratified; current high seas MPA coverage <1.2% (IUCN 2024)",confidence:"Very Low",crossed:false}];
+const THRESHOLDS = [{domain:"WTO Fisheries Subsidies Agreement enforcement",year:2025,confidence:"High",status:"In force September 2025; estimated $5-8B of $22.2B harmful subsidies addressed",crossed:true},{domain:"BBNJ Treaty entry into force",year:2026,confidence:"High",status:"Ratification threshold met; entered force January 2026",crossed:true},{domain:"Global MSY compliance >50% of assessed stocks",year:2030,confidence:"Medium",status:"Currently ~37.7% overfished globally (FAO SOFIA 2024)",crossed:false},{domain:"Coral reef fisheries tipping point",year:2025,confidence:"High",status:"ALREADY CROSSED — GTPR 2025: warm-water reefs past thermal tipping at 1.4°C",crossed:true},{domain:"High-seas MPA 30% coverage",year:2030,confidence:"Medium",status:"30×30 target; BBNJ framework now provides mechanism",crossed:false}];
 
-const AXIOMS = {type:"institutional",items:[{id:"I1",name:"Open Access Tragedy",description:"Gordon-Schaefer model predicts rent dissipation under open access; FAO estimates 64% of global catch comes from inadequately managed fisheries. High seas (ABNJ) covering 64% of ocean surface lack binding catch limits — 17 RFMOs cover only 5 major commercial species groups effectively."},{id:"I2",name:"Harmful Subsidy Lock-in",description:"Capacity-enhancing subsidies ($22.2B/yr, led by China $7.3B, EU $3.8B, US $3.4B) directly incentivize overcapacity; WTO negotiations took 21 years (2001–2022) to reach an agreement that still exempts most harmful subsidies for \'developing country\' members (Sumaila et al. 2019)."},{id:"I3",name:"IUU Enforcement Gap",description:"Illegal, unreported, and unregulated (IUU) fishing = 11–26M tonnes/yr worth $10–23B (Agnew et al. 2009, PLOS ONE); flag-state enforcement is structurally inadequate with 40% of fishing vessels operating under flags of convenience."}]};
+const AXIOMS = {type:"institutional",items:[{id:"I1",name:"Open-access commons depletion",description:"Without enforceable property rights over fish stocks, each vessel\'s rational response is to maximize current catch before competitors do, driving effort to the bioeconomic equilibrium where rent = 0."},{id:"I2",name:"Subsidy-overcapacity feedback",description:"$22.2B/year in capacity-enhancing subsidies sustain 2.5x more fleet than is sustainably necessary, creating a self-reinforcing loop: subsidies → overcapacity → depletion → subsidy dependency."},{id:"I3",name:"External forcing impossibility (coral sub-domain)",description:"Coral reef fisheries welfare destruction is now constitutively driven by ocean warming operating outside fisheries management\'s institutional reach — no ITQ or MPA can reduce sea surface temperature below the bleaching threshold."}]};
 
 const METHODS_DATA = {
-  welfare_function: "W = [Sustainable_rent + Ecosystem_services + Food_security] − [Overcapacity_costs + Stock_depletion + Subsidy_waste]. World Bank (2017) ‘Sunken Billions Revisited’ estimates annual rent loss from overfishing at $83B; rebuilding stocks to MEY would generate $86B/yr in additional rent.",
-  cooperative_baseline: "Global MSY-compliant fisheries with ITQ/rights-based management, harmful subsidy elimination, and 30% high-seas MPAs; cooperative Π_C = $34.3B reflects sustainable extraction at maximum economic yield with full ecosystem accounting.",
-  falsification: ["If global stock assessments show >75% of stocks within biologically sustainable levels by 2030, institutional failure is being corrected.","If WTO subsidies agreement enters force and demonstrably reduces capacity-enhancing subsidies by >50%, subsidy lock-in claim weakens.","If Monte Carlo robustness for β_W > 1 falls below 80%, point estimate is unreliable.","If IUU fishing declines to <5% of total catch through monitoring technology (VMS, AIS), enforcement gap claim needs revision."],
-  key_sources: ["FAO (2022). The State of World Fisheries and Aquaculture (SOFIA) 2022.","World Bank (2017). The Sunken Billions Revisited: Progress and Challenges in Global Marine Fisheries.","Sumaila, U.R. et al. (2019). Updated estimates and analysis of global fisheries subsidies. Marine Policy 109.","Agnew, D.J. et al. (2009). Estimating the Worldwide Extent of Illegal Fishing. PLOS ONE 4(2).","Costello, C. et al. (2016). Global fishery prospects under contrasting management regimes. PNAS 113(18)."]
+  welfare_function: "W computed as foregone economic rent from the World Bank Arnason bioeconomic model ($83B stock depletion) plus five additional channels using FAO SOFIA 2024 and peer-reviewed cost estimates.",
+  cooperative_baseline: "Global fisheries operating at Maximum Economic Yield under full ITQ/MPA implementation, generating $552B/year in sustainable revenue — the World Bank bioeconomic projection after 44% effort reduction.",
+  falsification: ["F1: Demonstrate that global ITQ implementation fails to rebuild overfished stocks, contradicting the 50-stock U.S. MSA rebuilding record since 2000.","F2: Show that eliminating $22.2B in capacity-enhancing subsidies increases rather than decreases the global fishing fleet through second-order market effects.","F3: Demonstrate that coral reef fisheries productivity can be maintained under continued 1.4°C+ warming without requiring sea surface temperature reduction."],
+  key_sources: ["World Bank, Sunken Billions Revisited (2017)","FAO, State of World Fisheries and Aquaculture (2024)","Costello et al., Status and solutions for the world\'s unassessed fisheries (2012)","Global Tipping Points Report 2025 (Lenton et al.)"]
 };
-
 
 // ─── Color palette ───────────────────────────────────────────────────────────
 const C = {
@@ -336,51 +337,58 @@ export default function Fisheries7bNoImpossibilityDashboard() {
             </div>
           </div>
         )}
-
         {/* MONTE CARLO TAB */}
         {tab === 'monte-carlo' && (
           <div>
-            <SectionTitle>Monte Carlo Robustness — {MC_PARAMS.n_draws.toLocaleString()} Draws</SectionTitle>
+            <SectionTitle>Monte Carlo Simulation — {MC_STATS.n_draws.toLocaleString()} Draws (seed={MC_STATS.seed})</SectionTitle>
             <div style={{background:C.panel,border:`1px solid ${C.border}`,borderRadius:4,padding:16,marginBottom:16}}>
-              <ResponsiveContainer width="100%" height={280}>
-                <BarChart data={MC_DATA} margin={{top:10,right:30,left:20,bottom:10}}>
+              <ResponsiveContainer width="100%" height={300}>
+                <BarChart data={MC_HIST} margin={{top:10,right:30,left:20,bottom:30}}>
                   <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
-                  <XAxis dataKey="bin" stroke={C.muted} tick={{fontFamily:C.mono,fontSize:10}} />
+                  <XAxis dataKey="bin" stroke={C.muted} tick={{fontFamily:C.mono,fontSize:9}} angle={-45} textAnchor="end" interval={4} />
                   <YAxis stroke={C.muted} tick={{fontFamily:C.mono,fontSize:11}} />
-                  <Tooltip contentStyle={{background:C.panel,border:`1px solid ${C.border}`,fontFamily:C.mono,fontSize:12,color:C.text}} />
+                  <Tooltip contentStyle={{background:C.panel,border:`1px solid ${C.border}`,fontFamily:C.mono,fontSize:12,color:C.text}} formatter={(v)=>[v,'Draws']} />
                   <Bar dataKey="count" fill={C.gold} />
-                  <ReferenceLine x={MC_PARAMS.mean.toFixed(1)} stroke={C.crimson} strokeDasharray="5 5" label={{value:'β̄='+MC_PARAMS.mean,fill:C.crimson,fontFamily:C.mono,fontSize:11}} />
+                  <ReferenceLine x={MC_STATS.mean.toFixed(2)} stroke={C.crimson} strokeWidth={2} strokeDasharray="5 5" label={{value:'μ='+MC_STATS.mean.toFixed(2),fill:C.crimson,fontFamily:C.mono,fontSize:11,position:'top'}} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
             <div style={{display:'flex',gap:12,flexWrap:'wrap',marginBottom:16}}>
-              <Metric label="MEAN β_W" value={MC_PARAMS.mean} color={C.gold} />
-              <Metric label="90% CI" value={'['+MC_PARAMS.ci_lo+', '+MC_PARAMS.ci_hi+']'} color={C.muted} />
-              <Metric label="% HOLLOW WIN" value={MC_PARAMS.pct_hw+'%'} color={MC_PARAMS.pct_hw > 90 ? C.crimson : C.gold} />
+              <Metric label="MEAN β_W" value={MC_STATS.mean.toFixed(2)} sub={'Median: '+MC_STATS.median.toFixed(2)} color={C.gold} />
+              <Metric label="90% CI" value={'['+MC_STATS.ci_lo.toFixed(2)+', '+MC_STATS.ci_hi.toFixed(2)+']'} sub={'Range: '+MC_STATS.min.toFixed(2)+'–'+MC_STATS.max.toFixed(2)} color={C.muted} />
+              <Metric label="% HOLLOW WIN" value={MC_STATS.pct_hw.toFixed(1)+'%'} sub={'β_W > 1 in all draws'} color={MC_STATS.pct_hw > 95 ? C.crimson : C.gold} />
+              <Metric label="% β_W > 3" value={MC_STATS.pct_above_3.toFixed(1)+'%'} color={MC_STATS.pct_above_3 > 90 ? C.crimson : C.gold} />
+              <Metric label="% β_W > 5" value={MC_STATS.pct_above_5.toFixed(1)+'%'} color={MC_STATS.pct_above_5 > 50 ? '#D97706' : C.gold} />
             </div>
-            {MC_PARAMS.channels && MC_PARAMS.channels.length > 0 && (
-              <div style={{padding:16,background:C.panel,border:`1px solid ${C.border}`,borderRadius:4}}>
-                <div style={{fontFamily:C.mono,fontSize:12,color:C.gold,marginBottom:8}}>DISTRIBUTION PARAMETERS</div>
-                <table style={{width:'100%',borderCollapse:'collapse',fontFamily:C.mono,fontSize:13}}>
-                  <thead><tr style={{borderBottom:`1px solid ${C.border}`}}>
-                    <th style={{padding:'6px 10px',textAlign:'left',color:C.gold}}>CHANNEL</th>
-                    <th style={{padding:'6px 10px',textAlign:'left',color:C.gold}}>DISTRIBUTION</th>
-                    <th style={{padding:'6px 10px',textAlign:'right',color:C.gold}}>LOW</th>
-                    <th style={{padding:'6px 10px',textAlign:'right',color:C.gold}}>HIGH</th>
-                  </tr></thead>
-                  <tbody>
-                    {MC_PARAMS.channels.map((ch,i) => (
-                      <tr key={i} style={{borderBottom:`1px solid rgba(255,255,255,0.04)`}}>
-                        <td style={{padding:'6px 10px',color:C.text}}>{ch.name}</td>
-                        <td style={{padding:'6px 10px',color:C.muted}}>{ch.dist}</td>
-                        <td style={{padding:'6px 10px',color:C.muted,textAlign:'right'}}>{ch.lo}</td>
-                        <td style={{padding:'6px 10px',color:C.muted,textAlign:'right'}}>{ch.hi}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
+            <SectionTitle>Channel Welfare Contributions</SectionTitle>
+            <table style={{width:'100%',borderCollapse:'collapse',fontFamily:C.mono,fontSize:13}}>
+              <thead><tr style={{borderBottom:`1px solid ${C.border}`}}>
+                <th style={{padding:'8px 12px',textAlign:'left',color:C.gold}}>CHANNEL</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>MEAN $B</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>P5</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>P50</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>P95</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>SHARE</th>
+              </tr></thead>
+              <tbody>
+                {MC_CHANNELS.map((ch,i) => (
+                  <tr key={i} style={{borderBottom:`1px solid rgba(255,255,255,0.04)`,background:i%2===0?C.panel:C.bg}}>
+                    <td style={{padding:'8px 12px',color:C.text,fontFamily:C.serif,fontSize:14}}>{ch.name}</td>
+                    <td style={{padding:'8px 12px',color:C.gold,textAlign:'right',fontWeight:600}}>{ch.mean.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{ch.p5.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{ch.p50.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{ch.p95.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{(ch.share*100).toFixed(1)}%</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <div style={{marginTop:16,padding:12,background:'rgba(245,158,11,0.06)',border:`1px solid rgba(245,158,11,0.15)`,borderRadius:4}}>
+              <div style={{fontFamily:C.mono,fontSize:11,color:C.muted}}>Total welfare cost: <span style={{color:C.gold}}>${MC_WELFARE.mean.toFixed(1)}B</span> (90% CI: ${MC_WELFARE.ci_lo.toFixed(1)}B – ${MC_WELFARE.ci_hi.toFixed(1)}B) · Source: sapm_monte_carlo.py (seed=42)</div>
+            </div>
+          </div>
+        )}
+
           </div>
         )}
 

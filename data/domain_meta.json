@@ -1,0 +1,138 @@
+{
+  "key": "sapm-fisheries-no-impossibility",
+  "meta_fill": {
+    "pi": "$37.6B",
+    "psa": "-$139.8B",
+    "mu": "0.212",
+    "kappa": "1.12"
+  },
+  "psf": {
+    "pi_c": 8.5,
+    "pi_p": 37.6,
+    "w_c": 177.4,
+    "kappa": 1.12
+  },
+  "monte_carlo": {
+    "mean": 4.82,
+    "ci_lo": 3.24,
+    "ci_hi": 6.58,
+    "pct_hw": 100.0,
+    "n_draws": 10000,
+    "channels": [
+      {
+        "name": "Stock depletion",
+        "dist": "triangular",
+        "lo": 51,
+        "hi": 105,
+        "mode": 83
+      },
+      {
+        "name": "Bycatch & discards",
+        "dist": "triangular",
+        "lo": 8,
+        "hi": 22,
+        "mode": 15
+      },
+      {
+        "name": "Benthic habitat destruction",
+        "dist": "triangular",
+        "lo": 12,
+        "hi": 45,
+        "mode": 27
+      },
+      {
+        "name": "IUU fishing",
+        "dist": "triangular",
+        "lo": 10,
+        "hi": 24,
+        "mode": 17
+      },
+      {
+        "name": "Capacity-enhancing subsidies",
+        "dist": "triangular",
+        "lo": 18,
+        "hi": 28,
+        "mode": 22.2
+      },
+      {
+        "name": "Governance & forced labor",
+        "dist": "uniform",
+        "lo": 6,
+        "hi": 22,
+        "mode": 13.2
+      }
+    ]
+  },
+  "thresholds": [
+    {
+      "domain": "WTO Fisheries Subsidies Agreement enforcement",
+      "year": 2025,
+      "confidence": "High",
+      "status": "In force September 2025; estimated $5-8B of $22.2B harmful subsidies addressed",
+      "crossed": true
+    },
+    {
+      "domain": "BBNJ Treaty entry into force",
+      "year": 2026,
+      "confidence": "High",
+      "status": "Ratification threshold met; entered force January 2026",
+      "crossed": true
+    },
+    {
+      "domain": "Global MSY compliance >50% of assessed stocks",
+      "year": 2030,
+      "confidence": "Medium",
+      "status": "Currently ~37.7% overfished globally (FAO SOFIA 2024)",
+      "crossed": false
+    },
+    {
+      "domain": "Coral reef fisheries tipping point",
+      "year": 2025,
+      "confidence": "High",
+      "status": "ALREADY CROSSED \u2014 GTPR 2025: warm-water reefs past thermal tipping at 1.4\u00b0C",
+      "crossed": true
+    },
+    {
+      "domain": "High-seas MPA 30% coverage",
+      "year": 2030,
+      "confidence": "Medium",
+      "status": "30\u00d730 target; BBNJ framework now provides mechanism",
+      "crossed": false
+    }
+  ],
+  "axioms": {
+    "type": "institutional",
+    "items": [
+      {
+        "id": "I1",
+        "name": "Open-access commons depletion",
+        "description": "Without enforceable property rights over fish stocks, each vessel's rational response is to maximize current catch before competitors do, driving effort to the bioeconomic equilibrium where rent = 0."
+      },
+      {
+        "id": "I2",
+        "name": "Subsidy-overcapacity feedback",
+        "description": "$22.2B/year in capacity-enhancing subsidies sustain 2.5x more fleet than is sustainably necessary, creating a self-reinforcing loop: subsidies \u2192 overcapacity \u2192 depletion \u2192 subsidy dependency."
+      },
+      {
+        "id": "I3",
+        "name": "External forcing impossibility (coral sub-domain)",
+        "description": "Coral reef fisheries welfare destruction is now constitutively driven by ocean warming operating outside fisheries management's institutional reach \u2014 no ITQ or MPA can reduce sea surface temperature below the bleaching threshold."
+      }
+    ]
+  },
+  "methods": {
+    "welfare_function": "W computed as foregone economic rent from the World Bank Arnason bioeconomic model ($83B stock depletion) plus five additional channels using FAO SOFIA 2024 and peer-reviewed cost estimates.",
+    "cooperative_baseline": "Global fisheries operating at Maximum Economic Yield under full ITQ/MPA implementation, generating $552B/year in sustainable revenue \u2014 the World Bank bioeconomic projection after 44% effort reduction.",
+    "key_sources": [
+      "World Bank, Sunken Billions Revisited (2017)",
+      "FAO, State of World Fisheries and Aquaculture (2024)",
+      "Costello et al., Status and solutions for the world's unassessed fisheries (2012)",
+      "Global Tipping Points Report 2025 (Lenton et al.)"
+    ],
+    "falsification": [
+      "F1: Demonstrate that global ITQ implementation fails to rebuild overfished stocks, contradicting the 50-stock U.S. MSA rebuilding record since 2000.",
+      "F2: Show that eliminating $22.2B in capacity-enhancing subsidies increases rather than decreases the global fishing fleet through second-order market effects.",
+      "F3: Demonstrate that coral reef fisheries productivity can be maintained under continued 1.4\u00b0C+ warming without requiring sea surface temperature reduction."
+    ]
+  }
+}
