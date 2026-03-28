@@ -389,9 +389,6 @@ export default function Fisheries7bNoImpossibilityDashboard() {
           </div>
         )}
 
-          </div>
-        )}
-
         {/* THRESHOLDS TAB */}
         {tab === 'thresholds' && (
           <div>
