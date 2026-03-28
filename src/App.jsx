@@ -65,7 +65,7 @@ const HIGHLIGHTS = [
         "UPDATE: Global Tipping Points Report (Oct 12, 2025) confirmed warm-water coral reefs have already crossed their climate tipping point at 1.4°C — 40 years ahead of original projections.",
         "84% of reefs globally impacted by 2023–2025 bleaching event. Even at 1.5°C, all warm-water coral reefs virtually certain to pass point of no return.",
         "Coral reef sub-domain reclassified: Type II → Type III (External Forcing Impossibility). Fisheries management instruments have zero leverage over ocean temperature.",
-        "Net β_W effect: +0.1 to +0.3 above headline 4.72 from coral tipping. Classification unchanged but irreversible component growing.",
+        "Net βW effect: +0.1 to +0.3 above headline 4.72 from coral tipping. Classification unchanged but irreversible component growing.",
 ];
 
 const PSF_PARAMS = {pi_c:8.5,pi_p:37.6,w_c:177.4,kappa:1.12};
@@ -325,7 +325,7 @@ export default function Fisheries7bNoImpossibilityDashboard() {
                   <th style={{padding:'8px 12px',textAlign:'left',color:C.gold}}>CAPM ANALOGUE</th>
                 </tr></thead>
                 <tbody>
-                  {[['β_W (System Beta)','β (Market Beta)'],['PSF (Private-Systemic Frontier)','SML (Security Market Line)'],[<>μ* (Shadow Price)</>,<>r<sub>f</sub> (Risk-Free Rate)</>],['Πˢᵃ (System-Adjusted Payoff)','α (Jensen\'s Alpha)'],['W (System Welfare)','No equivalent — structurally invisible'],[<>𝒮<sub>W</sub> (Welfare Efficiency)</>,<>Sharpe Ratio</>]].map(([s,c],i) => (
+                  {[[<>β<sub>W</sub> (System Beta)</>,<>β (Market Beta)</>],['PSF (Private-Systemic Frontier)','SML (Security Market Line)'],[<>μ* (Shadow Price)</>,<>r<sub>f</sub> (Risk-Free Rate)</>],['Πˢᵃ (System-Adjusted Payoff)','α (Jensen\'s Alpha)'],['W (System Welfare)','No equivalent — structurally invisible'],[<>𝒮<sub>W</sub> (Welfare Efficiency)</>,<>Sharpe Ratio</>]].map(([s,c],i) => (
                     <tr key={i} style={{borderBottom:`1px solid rgba(255,255,255,0.04)`}}>
                       <td style={{padding:'8px 12px',color:C.text}}>{s}</td>
                       <td style={{padding:'8px 12px',color:C.muted,fontFamily:C.serif}}>{c}</td>
@@ -482,7 +482,7 @@ export default function Fisheries7bNoImpossibilityDashboard() {
       </div>
 
       
-      {/* 𝒮_W WELFARE EFFICIENCY RATIO */}
+      {/* 𝒮W WELFARE EFFICIENCY RATIO */}
       <div style={{padding:"24px",background:C.panel,border:"2px solid #D9770640",borderRadius:4,margin:"24px 0"}}>
         <div style={{fontFamily:C.mono,fontSize:12,color:"#D97706",letterSpacing:2,marginBottom:16}}>WELFARE EFFICIENCY RATIO</div>
         <div style={{display:"flex",alignItems:"baseline",gap:12,marginBottom:12}}>
